@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import row64
+
+def BasicBar(inDf, inNameI, inValueI):
+	values = inDf[inDf.columns[inValueI]]
+	names = inDf[inDf.columns[inNameI]]
+	y_pos = np.arange(len(names))
+	plt.bar(y_pos, values, color='#108AC6')
+	plt.xticks(y_pos, names,rotation=45,size = 5)
+
+#IMPORT("C:\Users\jesus\OneDrive - pepperdine.edu\Courses\ISTM 660\Row64\Tesla Data2.csv")
+dfIn=row64.get_dataframe("Dataframe5")
+df=dfIn.copy(deep=True)
+BasicBar(df,0,2)
