@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import row64
+
+def LineScatter(inDf, inCol1, inCol2):
+	cName1 = inDf.columns[inCol1]
+	cName2 = inDf.columns[inCol2]
+	plt.figure(figsize=(9,5))
+	plt.margins(0, 0.03)
+	plt.plot(inDf[cName1], inDf[cName2],marker='o')
+
+#IMPORT("C:\Users\jesus\OneDrive - pepperdine.edu\Courses\ISTM 660\Row64\Total Installed Vehicle Capacity Data.csv")
+dfIn=row64.get_dataframe("Dataframe14")
+df=dfIn.copy(deep=True)
+LineScatter(df,0,1)
